@@ -1,0 +1,93 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificación</title>
+   <!--Made with love by Mutiullah Samim -->
+   
+  <!--Bootsrap 4 CDN-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!--Custom styles-->
+  
+</head>
+<body>
+	<div class="container">
+    <div class="row" style="background-color: rgb(0 0 0 / 26%) !important;">
+      <h4>Certificados <strong>{{nombres}}</strong></h4>  
+    </div>
+    <br>
+    <hr>
+    <div *ngIf="!cm" class="col">
+      
+      <div class="retefuente">
+        <h2 class="item"><p (click)="clicRetef()">Rete Fuente</p></h2>
+        <div *ngIf="retef">
+          <p><a routerLink="/certificado">certificado</a></p>
+          
+          <!--<div *ngIf=view id="htmlData">
+            <h2>Lista de videojuegos en stock</h2>
+            <table class="table table-bordered mt-4">
+              <tr class="table-primary">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Platform</th>
+                <th>Reference</th>
+              </tr>
+              <tr *ngFor="let game of VIDEOGAMES">
+                <th>{{game.id}}</th>
+                <td>{{game.name}}</td>
+                <td>{{game.platform}}</td>
+                <td>{{game.reference}}</td>
+              </tr>
+            </table>
+          </div>-->
+          <div>
+            <!--<button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">Download PDF</button>-->
+          </div>
+          
+
+          <hr>
+        </div>
+      </div>
+      
+      <div class="reteica">
+        <h2 class="item"><p (click)="clicReteI()">Rete Ica</p></h2>
+        <div *ngIf="retei">
+          hjjjhjj
+          <hr>
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="cm" class="col">
+      <p><i>GESTOR DE CERTIFICADOS</i></p>
+      <!---- VISTA PARA SUBIR ARICHVOS ACCESORIOS  --->
+      <div class="upload">  
+        <form role="form" id="form">
+          <div class="form-group">
+            <label for="ejemplo_email_1">RETENCIONES</label>
+            <select name="vehiculo" class="form-control" required>
+              <option value="" class="option">-- Elige una opción --</option>
+              <option value="FUENTE" class="option">RETE FUENTE</option>
+              <option value="ICA" class="option">RETE ICA</option>
+            </select>
+          </div>
+          <div class="form-group" id="file">
+            <label for="ejemplo_archivo_1" id="label">Adjuntar un archivo</label>
+            <input type="file" multiple id="up" (change)="fileChangeEvent($event)" required>
+          </div>
+          <button type="submit" class="btn btn-default" (click)="guardarDocumentos()">Enviar</button>
+        </form>
+      </div>
+      <!---- VISTA PARA SUBIR ARICHVOS ACCESORIOS  --->
+    </div>
+	</div>
+</body>
